@@ -57,4 +57,8 @@ This project analyzes telecom customer churn to uncover patterns and build predi
 - Automatic payment methods (bank transfer, credit card) reduce churn.
 
 ## 📚 Conclusion
-This project demonstrates a full pipeline from data wrangling and storytelling to machine learning modeling.
+This customer churn analysis project provided end-to-end insights by combining exploratory SQL queries, Power BI visualizations, and machine learning techniques. Key churn drivers were identified across customer demographics, service subscriptions, contract types, and billing behaviors.
+Through unsupervised learning (K-Means), customer segments were discovered, revealing groups at high risk of churn. Supervised models like logistic regression and random forest effectively predicted churn with good accuracy, enabling targeted retention strategies.
+Overall, the analysis suggests that improving long-term contracts, bundling services, and encouraging automatic payment methods could significantly reduce customer churn. These findings can guide telecom providers toward data-driven decision-making and customer loyalty improvements.
+
+
