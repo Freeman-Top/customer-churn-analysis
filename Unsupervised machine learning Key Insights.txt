@@ -1,0 +1,64 @@
+Based on the clustering analysis, we can identify distinct customer segments:
+
+Cluster 0:
+
+Lower monthly charges
+
+Shorter tenure
+
+Higher churn rate
+
+Mostly month-to-month contracts
+
+Likely price-sensitive customers
+
+Cluster 1:
+
+Moderate monthly charges
+
+Medium tenure
+
+Average churn rate
+
+Mix of contract types
+
+Likely mainstream customers
+
+Cluster 2:
+
+Higher monthly charges
+
+Longer tenure
+
+Lower churn rate
+
+More two-year contracts
+
+Likely loyal, high-value customers
+
+Business Recommendations from Unsupervised Learning
+Targeted Retention Strategies:
+
+Focus retention efforts on Cluster 0 (high churn risk)
+
+Offer incentives to Cluster 1 to move them to Cluster 2 characteristics
+
+Reward Cluster 2 customers to maintain their loyalty
+
+Service Bundling:
+
+Create packages that might appeal to Cluster 0 to increase their tenure
+
+Offer premium services to Cluster 1 to increase their value
+
+Product Development:
+
+Analyze services used by Cluster 2 to understand what keeps them loyal
+
+Develop intermediate offerings to bridge Cluster 0 and Cluster 1
+
+Customer Segmentation:
+
+Use these clusters for more targeted marketing campaigns
+
+Develop different communication strategies for each segment
