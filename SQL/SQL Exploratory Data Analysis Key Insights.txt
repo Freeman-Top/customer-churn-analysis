@@ -1,0 +1,43 @@
+Key Insights to Highlight
+
+High-Risk Groups:
+
+Month-to-month contract customers have 43% churn rate vs 11% for 2-year contracts
+
+Fiber optic internet users churn at 31% vs DSL at 19%
+
+Customers without tech support churn at 2.5x the rate of those with support
+
+Financial Impact:
+
+Churned customers had 18% lower average monthly charges(74vs90 for retained)
+
+Electronic check users have highest churn rate (34%) while automatic payments have lowest (15%)
+
+Behavior Patterns:
+
+Average tenure of churned customers is 17 months vs 38 months for retained
+
+Customers with both streaming services (TV & Movies) have lower churn (19%)
+
+Recommended Actions
+Targeted Retention Offers for month-to-month contract customers
+
+Improve Tech Support experience and promote its value
+
+Incentivize Longer Contracts with loyalty benefits
+
+Payment Method Optimization to encourage automatic payments
+
+Special Attention to fiber optic customers with high-speed guarantees
+
+Implementation Notes
+Create calculated measures for churn rates and comparisons
+
+Use bookmarks to create an interactive story flow
+
+Add slicers for gender, contract type, and internet service for user exploration
+
+Implement tooltips with detailed breakdowns for each visual
+
+Use a consistent color scheme (red for churn, blue for retained)
