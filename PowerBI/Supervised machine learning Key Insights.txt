@@ -1,0 +1,43 @@
+Key Findings:
+Top Predictive Features:
+
+Contract type (Month-to-month vs. longer contracts)
+
+Internet service type (Fiber optic has higher churn)
+
+Tenure (newer customers more likely to churn)
+
+Online security and tech support (lack of these increases churn)
+
+Monthly charges (higher charges correlate with churn)
+
+Best Performing Model:
+
+Gradient Boosting achieved the highest ROC AUC (0.86) and accuracy (0.81)
+
+Good balance between precision (0.68) and recall (0.54) for churn class
+
+Business Recommendations:
+Targeted Retention Strategies:
+
+Focus on month-to-month contract customers with proactive retention offers
+
+Implement win-back campaigns for customers in their first 12 months
+
+Service Improvements:
+
+Bundle online security and tech support with fiber optic packages
+
+Review pricing strategy for high-churn segments
+
+Early Warning System:
+
+Deploy the model to score customers by churn risk
+
+Create intervention workflows for high-risk customers
+
+Customer Experience:
+
+Improve onboarding for new customers
+
+Offer loyalty rewards for longer-tenured customers

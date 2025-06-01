@@ -1,0 +1,372 @@
+Customer Churn Analysis Report
+
+A. Introduction
+Customer churn is a critical metric for businesses, especially in the telecom industry, where retaining customers is as important as acquiring new ones. This report analyzes customer churn in telecom services using a dataset obtained from Kaggle. The goal is to identify key factors contributing to customer attrition and provide actionable insights to reduce churn rates.
+
+1. Dataset Overview:
+
+Source of Data
+The dataset was sourced from Kaggle, a popular platform for datasets used in data science and machine learning projects. Kaggle provides high-quality, real-world datasets that are widely used for predictive modeling and analysis.
+https://www.kaggle.com/datasets/kapturovalexander/customers-churned-in-telecom-services
+
+2. Reason for Choosing This Dataset:
+
+Relevance: Telecom churn is a well-documented business problem, making this dataset highly applicable for analysis.
+
+Comprehensiveness: The dataset includes multiple customer attributes (demographics, services subscribed, billing details, etc.), allowing for a thorough analysis.
+
+Real-world Application: Insights from this analysis can directly help telecom companies improve customer retention strategies.
+
+3. Dataset Description:
+
+The dataset contains 20 columns with the following key attributes:
+
+Column Names		Description
+gender			Customer's gender (Male/Female)
+SeniorCitizen		Whether the customer is a senior citizen (1 = Yes, 0 = No)
+Partner			Whether the customer has a partner (Yes/No)
+Dependents		Whether the customer has dependents (Yes/No)
+tenure			Number of months the customer has stayed with the company
+PhoneService		Whether the customer has a phone service (Yes/No)
+MultipleLines		Whether the customer has multiple lines (Yes/No/No phone service)
+InternetService		Type of internet service (DSL, Fiber optic, No)
+OnlineSecurity		Whether the customer has online security (Yes/No/No internet service)
+OnlineBackup		Whether the customer has online backup (Yes/No/No internet service)
+DeviceProtection	Whether the customer has device protection (Yes/No/No internet service)
+TechSupport		Whether the customer has tech support (Yes/No/No internet service)
+StreamingTV		Whether the customer has streaming TV (Yes/No/No internet service)
+StreamingMovies		Whether the customer has streaming movies (Yes/No/No internet service)
+Contract		Contract type (Month-to-month, One year, Two year)
+PaperlessBilling	Whether the customer uses paperless billing (Yes/No)
+PaymentMethod		Payment method (Electronic check, Mailed check, Bank transfer, Credit card)
+MonthlyCharges		Monthly charges incurred by the customer
+TotalCharges		Total charges incurred by the customer (may have missing values)
+Churn			Whether the customer churned (Yes/No)
+
+
+3. Descriptive Statistics:
+
+Total Rows: 7,043 
+
+Numerical Features:
+
+tenure: Mean ~32 months, Min = 1, Max = 72
+
+MonthlyCharges: Mean ~64.76, Min = 18.25, Max = 118.75
+
+TotalCharges: Mean ~2,280, Min = 18.8, Max = 8,684 (some missing values)
+
+Categorical Features:
+
+Churn: ~26.5% churn rate 
+
+Most common internet service: Fiber optic
+
+Most common contract type: Month-to-month
+
+4. Missing Values:
+
+The TotalCharges column has 11 missing values (empty strings or nulls).
+
+Other columns like InternetService and related features have "No internet service" as a valid category, not missing data.
+
+B. Customer Churn Analysis Visualization Report From PowerBI:
+
+This report extends the previous customer churn analysis by incorporating key insights derived from Power BI visualizations. The dashboard highlights critical trends in customer behavior, contract preferences, and demographic factors influencing churn.
+
+1. Dashboard Overview
+This section presents a high-level summary of customer churn across the organization.
+
+Total Customers Analyzed: 7,043
+
+Churned Customers: 1,869, representing a churn rate of 26.54%
+
+Customer Retention Status:
+
+73.46% of customers have remained with the company.
+
+26.54% of customers have discontinued their services.
+
+Churn by Contract Type:
+
+Customers on month-to-month contracts exhibit the highest churn rates, indicating lower customer commitment.
+
+Those with one-year and two-year contracts have significantly lower churn rates, suggesting long-term contracts enhance customer retention.
+
+Impact of Internet Service Type:
+
+Customers using fiber optic internet have a churn rate of 41.89%, which is more than double the 18.96% churn rate observed among DSL users.
+
+2. Tenure and Charges Analysis
+This section examines the relationship between churn, customer tenure, and monthly billing amounts.
+
+Churn Rate by Customer Tenure:
+
+The highest churn is observed within the first 20 months, peaking around 6%.
+
+Long-term customers (those with tenure exceeding 60 months) demonstrate a churn rate of less than 2%, highlighting improved loyalty over time.
+
+Impact of Monthly Charges on Churn:
+
+Customers with monthly charges above $80 show a significantly higher churn rate of approximately 40%.
+
+Conversely, those paying less than $40 per month have a churn rate below 10%, suggesting pricing plays a crucial role in customer retention.
+
+3. Contract, Billing, and Support Impact
+This section highlights how contract structure, payment method, and technical support availability influence churn.
+
+Payment Methods and Churn:
+
+Customers using electronic checks exhibit the highest churn rate at 45.29%.
+
+Those using automatic credit card payments have the lowest churn rate at 15.24%, indicating a potential correlation between automated billing and retention.
+
+Contract Types and Customer Loyalty:
+
+Month-to-month contracts are linked to a churn rate of nearly 60%, suggesting a need for better incentives or upgrades.
+
+Two-year contracts show strong retention, with less than 20% churn.
+
+Technical Support Influence:
+
+Customers who lack technical support services churn at a rate 33.73% higher than those who have access to support, underlining its importance in customer satisfaction and retention.
+
+4. Demographic Analysis
+This section explores the impact of customer demographics on churn behavior.
+
+Gender:
+
+Churn rates between males (26.8%) and females (26.3%) are nearly identical, indicating gender is not a major determinant of churn.
+
+Age – Senior Citizens:
+
+Senior citizens show a churn rate of approximately 42%, significantly higher than the 24% churn rate among non-seniors.
+
+Family Status – Partners and Dependents:
+
+Customers without partners or dependents are more likely to churn, with a rate of around 33%, whereas customers with family connections have lower churn rates, suggesting a possible influence of household stability on loyalty.
+
+Conclusion:
+
+This extended analysis, enhanced through Power BI visualizations, provides a comprehensive and data-driven understanding of the key factors influencing customer churn in the telecom industry. By leveraging interactive dashboards, the study uncovers critical behavioral, contractual, billing, and demographic patterns that directly impact customer retention.
+
+
+C. Customer Churn Exploratory Data Analysis (EDA) using SQL Report
+
+1. Introduction and Dataset Setup:
+
+This report presents a detailed exploratory data analysis (EDA) on customer churn behavior in a telecommunications company. The dataset was initially provided in CSV format under the file name customer_churn_telecom_services.csv. To facilitate structured querying and efficient analysis, the data was imported into Azure Data Studio, which was used in conjunction with a SQL Server database environment.
+
+Dataset Import and Preparation:
+A dedicated database, Customer_Churn_Analysis, was created to host the project data.
+
+The dataset was imported using Azure Data Studio’s Import Wizard, ensuring compatibility and ease of integration.
+
+The resulting table, named CustomerChurnn, was structured with proper data type assignments across numerical, categorical, and textual fields.
+
+Comprehensive data integrity checks were conducted to confirm record count, column consistency, and appropriate value distributions.
+
+Key fields such as Churn, CustomerID, and Contract were indexed to optimize query performance.
+
+No data import issues or missing values were identified at this stage.
+
+2. Overview of Customer Churn:
+
+An initial high-level assessment was conducted to understand the scale of churn within the customer base.
+
+Total Customers Analyzed: 7,043
+
+Customers Who Churned: 1,869
+
+Overall Churn Rate: 26.54%
+
+This churn rate suggests that approximately one in four customers has discontinued their service—an indication of a significant business concern requiring strategic attention.
+
+3. Demographic Analysis:
+
+Gender Distribution and Churn:
+
+The customer base is fairly balanced in terms of gender.
+
+Churn rates are nearly identical between male and female customers, both approximating 26%.
+
+This suggests that gender does not play a significant role in predicting churn.
+
+Senior Citizens:
+
+Senior citizens (defined in the dataset as individuals with a value of 1 under the SeniorCitizen column) exhibit a churn rate of approximately 42%.
+
+In contrast, non-senior customers show a churn rate closer to 24%.
+
+This difference indicates that age is a strong factor and that senior customers may benefit from improved engagement or specialized service options.
+
+4. Analysis of Contract Types and Subscription Preferences:
+
+Contract Length:
+Customers with month-to-month contracts show the highest churn rate, reaching nearly 60%.
+
+By comparison, those on one-year or two-year contracts experience significantly lower churn, with the latter maintaining churn rates below 20%.
+
+These findings highlight the stabilizing influence of long-term contractual commitments on customer retention.
+
+Internet Service Type:
+Users of fiber optic internet report a churn rate of 41.89%, which is more than double that of DSL users (18.96%).
+
+This suggests a potential gap in value perception or service satisfaction among fiber optic customers, possibly related to pricing or performance expectations.
+
+5. Billing and Pricing Behavior:
+
+Monthly Charges:
+The average monthly charge across customers is approximately $64.
+
+Customers paying more than $80 per month are far more likely to churn, with churn rates reaching approximately 40%.
+
+In contrast, customers with monthly charges below $40 have churn rates under 10%, underscoring the price sensitivity within the customer base.
+
+Payment Method:
+Customers using electronic checks have the highest churn rate at 45%, while those paying via automatic credit card payments experience significantly lower churn (approximately 15%).
+
+This pattern suggests that customers who rely on manual billing methods may be less engaged or more likely to reconsider their service.
+
+6. Tenure-Based Churn Trends:
+
+Churn is particularly pronounced in the first 20 months of a customer’s tenure, peaking around 6%.
+
+After the 60-month mark, churn drops to below 2%, indicating increased loyalty among long-standing customers.
+
+Many churned customers exhibit a pattern of low total charges but high monthly charges, which points to early termination due to dissatisfaction or affordability concerns.
+
+7. Household Characteristics and Churn:
+
+Customers without partners or dependents display higher churn rates, around 33%.
+
+Those with family connections show notably lower churn, suggesting that household stability may contribute positively to customer retention.
+
+8. Churn-Prone Customer Profile:
+
+Based on the analysis, the segment most vulnerable to churn tends to have the following characteristics:
+
+Contract Type: Month-to-month
+
+Internet Service: Fiber optic
+
+Payment Method: Electronic check
+
+Tenure: Less than 20 months
+
+Monthly Charges: Greater than $80
+
+This group represents a high-risk cluster that should be prioritized for retention strategies and targeted interventions.
+
+Conclusion:
+
+This comprehensive SQL EDA analysis reveals critical patterns in customer churn behavior. The findings highlight specific customer segments that require immediate attention and provide actionable insights for developing targeted retention strategies. The high churn rate of 26.5% represents a significant business challenge, but the analysis identifies clear opportunities for intervention, particularly among new customers, fiber optic users, and those on month-to-month contracts.
+
+
+
+D. Supervised Machine Learning for Customer Churn Prediction:
+
+1. Report Overview:
+
+This report presents a supervised machine learning approach implemented in a Jupyter notebook(VS Code) to predict customer churn within a telecom service provider's subscriber base. The objective is to identify customers likely to discontinue service, enabling proactive retention strategies. The end-to-end data science pipeline includes data ingestion, preprocessing, feature engineering, model development, and performance evaluation.
+
+2. Data Loading and Initial Setup:
+
+The analysis begins by setting up the environment and loading the dataset. Key libraries utilized include:
+
+Data Manipulation: pandas, NumPy
+
+Machine Learning: scikit-learn (for preprocessing, model selection, evaluation)
+
+Visualization: matplotlib, seaborn
+
+The dataset, customer_churn_telecom_services.csv, is sourced from a local archive path and loaded into memory for further processing.
+
+3. Data Preprocessing:
+
+Handling Missing Values
+The TotalCharges column, initially read as an object, is converted to numeric using pd.to_numeric(errors='coerce').
+
+Any resulting missing values in TotalCharges are imputed using the median of the column.
+
+4. Feature Engineering
+
+A new categorical feature TenureGroup is created by binning the continuous tenure variable into the following ranges:
+
+0–1 Year
+
+1–2 Years
+
+2–4 Years
+
+4–6 Years
+
+The SeniorCitizen feature is transformed from binary numeric (0,1) to categorical ('No', 'Yes').
+
+5. Encoding Categorical Variables:
+
+Binary Categorical Variables: Encoded using LabelEncoder() for the following columns:
+
+gender, SeniorCitizen, Partner, Dependents, PhoneService, PaperlessBilling
+
+Multi-Class Categorical Variables: One-hot encoded via pd.get_dummies(drop_first=True) for:
+
+MultipleLines, InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, StreamingMovies, Contract, PaymentMethod, TenureGroup
+
+Target Variable: Churn is label encoded to binary values: 0 (No), 1 (Yes).
+
+6. Feature Selection and Data Splitting:
+
+Feature Matrix (X): All relevant features are selected, excluding Churn and tenure (replaced by TenureGroup).
+
+Target Vector (y): The Churn column.
+
+The dataset is split into training (70%) and test (30%) sets using train_test_split(), with:
+
+stratify=y to preserve class proportions
+
+random_state = 42 for reproducibility
+
+Numerical Feature Scaling: The features MonthlyCharges and TotalCharges are standardized using StandardScaler().
+
+7. Baseline Accuracy:
+
+The baseline model assumes all customers will not churn. Under this assumption, the accuracy is 73%, reflecting the imbalance in the target variable.
+
+8. Model Training and Evaluation:
+
+Logistic Regression Model
+A Logistic Regression model is trained on the processed data, and its performance is evaluated using several metrics:
+
+Accuracy: 79.89%
+
+ROC AUC Score: 84.00%
+
+9. Key Observations and Insights:
+
+Data Characteristics:
+
+After encoding and transformation, the dataset contains 32 features.
+
+Dataset dimensions:
+
+Training Set: 4,930 rows × 32 features
+
+Test Set: 2,113 rows × 32 features
+
+Notable class imbalance exists with approximately 73% of samples labeled as non-churn.
+
+Model Performance:
+ 
+The Logistic Regression model surpasses the baseline with an accuracy of 79.89%.
+
+High performance is observed for the majority class (No Churn), with a recall of 91%.
+
+The model's ability to detect churners is moderate, with a recall of 50% for the churn class.
+
+ROC AUC score of 0.84 indicates the model has strong discriminatory power.
+
+
+Conclusion
+This report illustrates a practical application of supervised machine learning for predicting telecom customer churn. With careful preprocessing, encoding, and baseline modeling, it achieves solid performance. 
+
