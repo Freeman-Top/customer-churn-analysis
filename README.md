@@ -1,7 +1,7 @@
-# customer-churn-analysis
+# Customer-Churn-Analysis
 Capstone project analysing customer churn using SQL, Power BI, and machine learning.
 
-# Customer Churn Analysis (Capstone Project)
+## Customer Churn Analysis (Capstone Project)
 
 ## 🔍 Overview
 This project analyzes telecom customer churn to uncover patterns and build predictive models. It includes SQL-based data exploration, storytelling with Power BI, and both supervised and unsupervised machine learning in Python.
